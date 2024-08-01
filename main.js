@@ -72,12 +72,21 @@ function iterarContenido(array) {
 }
 
 function seleccionarOpcion() {
-  let opcion = parseInt(
-    prompt(
-      "Contamos con un variado menú, cuentenos que desea elegir:\n---Menú---\n1.Desayuno\n2.Almuerzo\n3.Merienda\n4.Cena\n0.Cerrar :("
-    )
-  );
-  return opcion;
+  let opcionInvalida = true;
+  do{
+    let opcion = parseInt(
+      prompt(
+        "Contamos con un variado menú, cuentenos que desea elegir:\n---Menú---\n1.Desayuno\n2.Almuerzo\n3.Merienda\n4.Cena\n0.Cerrar :("
+      )
+    );
+    if (opcion >= 0 && opcion <= menu.length){
+      opcionInvalida = false;
+      return opcion;
+    } else {
+      alert("Opción Inválida");
+    }
+  }while(opcionInvalida);
+
 }
 
 function mostrarMenu(opcionElegida) {
