@@ -146,7 +146,7 @@ function realizarEntrega(carritoProductos) {
       "\nFecha: " +
       fecha +
       "\nProductos: \n" +
-      productosDelCarrito + "\n Total: $" + calcularTotal(carritoProductos)
+      productosDelCarrito + "Total: $" + calcularTotal(carritoProductos)
   );
 }
 
