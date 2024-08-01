@@ -1,6 +1,75 @@
-alert("Bienvenido a El Rincón Gourmet");
+// Creacion de los objetos
+class Productos {
+  constructor(nombre, precio, id) {
+    this.nombre = nombre;
+    this.precio = precio;
+    this.id = id;
+  }
+}
 
-let cerrar = false; // Tuve que usar este tipo de metodo porque se me generó problema con el dowhile cuando probaba cerrar de una el programa
+// CONTENIDO DE DESAYUNO
+const cafe = new Productos("Café", 70, 1);
+const capuchino = new Productos("Capuchino", 110, 2);
+const cafeLeche = new Productos("Café con leche", 80, 3);
+const te = new Productos("Té", 60, 4);
+const tostada = new Productos("Tostada", 15, 5);
+const sandwiche = new Productos("Sandwiche", 35, 6);
+const mediaLuna = new Productos("Media Luna", 40, 7);
+
+// CONTENIDO DE ALMUERZO
+const hamburguesa = new Productos("Hamburguesa Clásica", 280, 1);
+const costillas = new Productos("Costillas de Cerdo BBQ", 400, 2);
+const pizza = new Productos("Pizza", 450, 3);
+const pollo = new Productos("Pollo a la Parrilla", 500, 4);
+const ensalada = new Productos("Ensalada Mixta", 180, 5);
+const fritas = new Productos("Porción de Fritas", 200, 6);
+
+// CONTENIDO DE MERIENDA
+const yogur = new Productos("Yogur con Frutas", 80, 1);
+const tortaChoco = new Productos("Torta de chocolate", 120, 2);
+const tortaNar = new Productos("Torta de naranja y zanahorias", 120, 3);
+const cafeCortado = new Productos("Café cortado", 45, 4);
+
+// CONTENIDO DE CENA
+const pechuga = new Productos("Pechuga de Pollo al Horno", 340, 1);
+const tacos = new Productos("Tacos de Carne Asada", 240, 2);
+const mila = new Productos("Milanesa al pan", 300, 3);
+const choriPan = new Productos("Chorizo al pan", 200, 4);
+
+// MENU
+const menu = [
+  {
+    categoriaMenu: "Desayuno",
+    contenido: [cafe, capuchino, cafeLeche, te, tostada, mediaLuna],
+  },
+  {
+    categoriaMenu: "Almuerzo",
+    contenido: [hamburguesa, costillas, pizza, pollo, ensalada, fritas],
+  },
+  {
+    categoriaMenu: "Merienda",
+    contenido: [yogur, tortaChoco, tortaNar, cafeCortado, te, tostada],
+  },
+  {
+    categoriaMenu: "Cena",
+    contenido: [pechuga, tacos, pizza, mila, choriPan, hamburguesa],
+  },
+];
+
+// FUNCIONES
+
+// PARAMETRO: el array "contenido" de cada opcion (desayuno, almuerzo, etc);
+function iterarContenido(array) {
+  //Muestra el nombre de cada elemento del array dentro del objeto determinado Ademas pone un numero correspondiente para cada opcion a elegir
+  let listaContenido = "";
+  let numeroOpcion = 1;
+  array.forEach((el) => {
+    listaContenido +=
+      numeroOpcion + ": " + el.nombre + " : $" + el.precio + "\n";
+    numeroOpcion++;
+  });
+  return listaContenido;
+}
 
 function seleccionarOpcion() {
   let opcion = parseInt(
@@ -11,153 +80,89 @@ function seleccionarOpcion() {
   return opcion;
 }
 
-function desplegarOpcionMenu(opcionElegida) {
-  //acá le pasaria como parametro la opcion de la funcion seleccionarOpcion
-  if (opcionElegida === 1) {
-    let eleccion = parseInt(
-      prompt(
-        "---Desayuno---\n1.Café($70)\n2.Capuchino($110)\n3.Café con leche($80)\n4.Té($60)\n5.Tostadas($15 c/u)\n6.Sandwiches($35 c/u)\n7.Media Luna($40 c/u)"
-      )
-    );
-    if (eleccion <= 7 && eleccion != 0) {
-      switch (eleccion) {
-        case 1:
-          realizarEntrega("Café");
-          break;
-        case 2:
-          realizarEntrega("Capuchino");
-          break;
-        case 3:
-          realizarEntrega("Café con leche");
-          break;
-        case 4:
-          realizarEntrega("Té");
-          break;
-        case 5:
-          realizarEntrega("Tostada");
-          break;
-        case 6:
-          realizarEntrega("Sandwiche");
-          break;
-        case 7:
-          realizarEntrega("Media Luna");
-          break;
-      }
-    } else {
-      alert("Opción no válida");
-    }
-  } else if (opcionElegida === 2) {
-    let eleccion = parseInt(
-      prompt(
-        "---Almuerzo---\n1.Hamburguesa Clásica($280)\n2.Costillas de Cerdo BBQ($400)\n3.Pizza($450)\n4.Pollo a la Parrilla($500)\n5.Ensalada Mixta($3)\n6.Porción de fritas($200)"
-      )
-    );
-    if (eleccion <= 6 && eleccion != 0) {
-      switch (eleccion) {
-        case 1:
-          realizarEntrega("Hamburguesa Clásica");
-          break;
-        case 2:
-          realizarEntrega("Costillas de Cerdo BBQ");
-          break;
-        case 3:
-          realizarEntrega("Pizza");
-          break;
-        case 4:
-          realizarEntrega("Pollo a la Parrilla");
-          break;
-        case 5:
-          realizarEntrega("Ensalada Mixta");
-          break;
-        case 6:
-          realizarEntrega("Porción de fritas");
-          break;
-      }
-    } else {
-      alert("Opción no válida");
-    }
-  } else if (opcionElegida === 3) {
-    let eleccion = parseInt(
-      prompt(
-        "---Merienda---\n1.Yogur con Frutas($90)\n2.Tostadas($15 c/u)\n3.Torta de chocolate($150)\n4.Torta de naranja y zanahorias($170)\n5.Té($60)\n6.Café cortado($75)"
-      )
-    );
-    if (eleccion <= 6 && eleccion != 0) {
-      switch (eleccion) {
-        case 1:
-          realizarEntrega("Yogur con Frutas");
-          break;
-        case 2:
-          realizarEntrega("Tostada");
-          break;
-        case 3:
-          realizarEntrega("Torta de chocolate");
-          break;
-        case 4:
-          realizarEntrega("Torta de naranja y zanahorias");
-          break;
-        case 5:
-          realizarEntrega("Té");
-          break;
-        case 6:
-          realizarEntrega("Café cortado");
-          break;
-      }
-    } else {
-      alert("Opción no válida");
-    }
-  } else if (opcionElegida === 4) {
-    let eleccion = parseInt(
-      prompt(
-        "---Cena---\n1.Pechuga de Pollo al Horno($560)\n2.Tacos de Carne Asada($370 c/u)\n3.Pizza($450)\n4.Milanesa al pan\n5.Chorizo al pan($300)\n6.Hamburguesa Clásica($280)"
-      )
-    );
-    if (eleccion <= 6 && eleccion != 0) {
-      switch (eleccion) {
-        case 1:
-          realizarEntrega("Pechuga de Pollo al Horno");
-          break;
-        case 2:
-          realizarEntrega("Tacos de Carne Asada");
-          break;
-        case 3:
-          realizarEntrega("Pizza");
-          break;
-        case 4:
-          realizarEntrega("Milanesa al pan");
-          break;
-        case 5:
-          realizarEntrega("Chorizo al pan");
-          break;
-        case 6:
-          realizarEntrega("Hamburguesa Clásica");
-          break;
-      }
-    } else {
-      alert("Opción no válida");
-    }
-  } else if (opcionElegida === 0) {
-    alert("Adios :(");
-    cerrar = true;
+function mostrarMenu(opcionElegida) {
+  opcionElegida--;
+  let eleccion = parseInt(
+    prompt(
+      "---" +
+        menu[opcionElegida].categoriaMenu +
+        "---\n" +
+        iterarContenido(menu[opcionElegida].contenido)
+    )
+  );
+  if (eleccion >= 0 && eleccion <= menu[opcionElegida].contenido.length) {
+    return eleccion;
   } else {
-    alert("Por favor ingrese un valor válido");
+    alert("Opción inválida");
+    return null;
   }
 }
 
-function realizarEntrega(subEleccion) {
+function quiereSeguir() {
+  let seguir;
+  do {
+    seguir = parseInt(prompt("Deseas algo más?\n 1.Si\n0.No"));
+    if (seguir != 1 && seguir != 0) {
+      alert("Opcion Inválida");
+    }
+  } while (seguir != 1 && seguir != 0);
+  return seguir;
+}
+
+// Mejorando la funcion anterior de desplegarMenu, para que no sea tan repetitiva
+function desplegar(opcionElegida) {
+  let carrito = [];
+  let seguirSeleccionando = true;
+  do {
+    let opcionDelMenu = mostrarMenu(opcionElegida);
+    if (opcionDelMenu != null) {
+      let objetoAPushear = menu[opcionElegida - 1].contenido[opcionDelMenu - 1]; //Para solucionar el index del array me pongo el -1 (Tengo que buscar una mejor practica para esto tal vez)
+      carrito.push(objetoAPushear);
+      if (quiereSeguir() === 0) {
+        seguirSeleccionando = false;
+      }
+    }
+  } while (seguirSeleccionando);
+  return carrito;
+}
+
+//ACTUALIZAR PARA QUE ALERTE UN TICKET CON EL PRECIO TOTAL Y CADA PRODUCTO
+function realizarEntrega(carritoProductos) {
+  const fecha = new Date();
+  let productosDelCarrito = "";
+
+  carritoProductos.forEach((el) => {
+    productosDelCarrito += el.nombre + ": $" + el.precio + "\n";
+  });
+
   let nombre = prompt("Podrías indicarnos tu nombre");
   while (nombre == "" || !isNaN(nombre)) {
     nombre = prompt("Ingresa carácteres válidos, porfavor");
   }
+
   alert(
-    "Tu pedido será enviado a tu domicilio a la brevedad.\n!Muchas gracias por tu compra " +
+    "---El Rincón Gourmet---\n!Muchas gracias por tu compra!\nCliente: " +
       nombre +
-      ", disfruta tu " +
-      subEleccion +
-      "!"
+      "\nFecha: " +
+      fecha +
+      "\nProductos: \n" +
+      productosDelCarrito + "\n Total: $" + calcularTotal(carritoProductos)
   );
 }
 
-do {
-  desplegarOpcionMenu(seleccionarOpcion());
-} while (cerrar == false);
+function calcularTotal(arrayCompleto){
+  let totalCalculado = arrayCompleto.reduce((valorAntiguo, valorNuevo) => {
+    return valorAntiguo + valorNuevo.precio;
+  }, 0);
+  return totalCalculado;
+}
+
+// INICIO DEL PROGRAMA
+alert("Bienvenido a El Rincón Gourmet");
+let cerrar = false;
+
+while (cerrar == false) {
+  let opcion = seleccionarOpcion();
+  let despliegue = desplegar(opcion);
+  realizarEntrega(despliegue);
+};
