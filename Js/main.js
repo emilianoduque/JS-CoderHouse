@@ -8,7 +8,7 @@ fetch("./data/productos.json")
       }
     });
     
-    const linkeoBase = "./img/"
+    const linkeoBase = "./data/img-comida/"
     const linkeoFinal = ".png";
 
     // BOTONES
