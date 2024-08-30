@@ -1,5 +1,5 @@
 let productosDatos = {};
-fetch("../json/productos.json")
+fetch(".../json/productos.json")
   .then((resp) => resp.json())
   .then((data) => {
     console.log(data);
