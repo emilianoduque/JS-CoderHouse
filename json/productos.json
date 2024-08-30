@@ -1,0 +1,149 @@
+[
+    {
+        "cafe": {
+            "nombre": "Café",
+            "precio": 70,
+            "id": 1,
+            "img": "img-1"
+        },
+
+        "capuchino": {
+            "nombre": "Capuchino",
+            "precio": 110,
+            "id": 2,
+            "img": "img-2"
+        },
+
+        "cafeLeche": {
+            "nombre": "Café con leche",
+            "precio": 80,
+            "id": 3,
+            "img": "img-3"
+        },
+
+        "te": {
+            "nombre": "Té",
+            "precio": 60,
+            "id": 4,
+            "img": "img-4"
+        },
+        "tostada": {
+            "nombre": "Tostada",
+            "precio": 15,
+            "id": 5,
+            "img": "img-5"
+        },
+
+        "sandwiche": {
+            "nombre": "Sandwiche",
+            "precio": 35,
+            "id": 6,
+            "img": "img-6"
+        },
+
+        "mediaLuna": {
+            "nombre": "Media Luna",
+            "precio": 40,
+            "id": 7,
+            "img": "img-7"
+        },
+
+        "hamburguesa": {
+            "nombre": "Hamburguesa Clásica",
+            "precio": 280,
+            "id": 8,
+            "img": "img-8"
+        },
+
+        "costillas": {
+            "nombre": "Costillas de Cerdo BBQ",
+            "precio": 400,
+            "id": 9,
+            "img": "img-9"
+        },
+
+        "pizza": {
+            "nombre": "Pizza",
+            "precio": 450,
+            "id": 10,
+            "img": "img-10"
+        },
+
+        "pollo": {
+            "nombre": "Pollo a la Parrila",
+            "precio": 500,
+            "id": 11,
+            "img": "img-11"
+        },
+
+        "ensalada": {
+            "nombre": "Ensalada Mixta",
+            "precio": 180,
+            "id": 12,
+            "img": "img-12"
+        },
+ 
+        "fritas": {
+            "nombre": "Porción de Fritas",
+            "precio": 200,
+            "id": 13,
+            "img": "img-13"
+        },
+
+        "yogur": {
+            "nombre": "Yogur con Frutas",
+            "precio": 80,
+            "id": 14,
+            "img": "img-14"
+        },
+
+        "tortaChoco": {
+            "nombre": "Torta de chocolate",
+            "precio": 120,
+            "id": 15,
+            "img": "img-15"
+        },
+
+        "tortaNar": {
+            "nombre": "Torta de naranja y zanahoria",
+            "precio": 120,
+            "id": 16,
+            "img": "img-16"
+        },
+
+        "cafeCortado": {
+            "nombre": "Café Cortado",
+            "precio": 45,
+            "id": 17,
+            "img": "img-17"
+        },
+
+        "pechuga": {
+            "nombre": "Pechuga de Pollo al Horno",
+            "precio": 340,
+            "id": 18,
+            "img": "img-18"
+        },
+
+        "tacos": {
+            "nombre": "Tacos de Carne Asada",
+            "precio": 240,
+            "id": 19,
+            "img": "img-19"
+        },
+
+        "mila": {
+            "nombre": "Milanesa al Pan",
+            "precio": 300,
+            "id": 20,
+            "img": "img-20"
+        },
+
+        "choriPan": {
+            "nombre": "Chorizo al Pan",
+            "precio": 200,
+            "id": 21,
+            "img": "img-21"
+        }
+    }
+]
