@@ -1,8 +1,7 @@
 let productosDatos = {};
-fetch(".../json/productos.json")
+fetch("../json/productos.json")
   .then((resp) => resp.json())
   .then((data) => {
-    console.log(data);
     data.forEach((producto) => {
       for (let objeto in producto) {
         productosDatos[objeto] = producto[objeto];
