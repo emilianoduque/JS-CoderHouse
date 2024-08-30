@@ -224,7 +224,7 @@ fetch("./data/productos.json")
       }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
-          Swal.fire("Saved!", "", "success");
+          Swal.fire("Compra realizada con éxito!", "", "success");
           //Borra el carrito luego de la compra
           carrito = [];
           carroBoard.innerHTML = " ";
